@@ -90,7 +90,7 @@ export type WALoadChatOptions = {
 export type WAConnectOptions = {
     /** fails the connection if no data is received for X seconds */
     maxIdleTimeMs?: number
-    /** maximum attempts to connect */
+    /** maximum attempts to connect, a value of -1 retries infinitely */
     maxRetries?: number
     /** max time for the phone to respond to a connectivity test */
     phoneResponseTime?: number

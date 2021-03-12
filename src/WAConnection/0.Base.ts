@@ -227,7 +227,7 @@ export class WAConnection extends EventEmitter {
         let triesLeft = maxRetries || 2
         tag = tag || this.generateMessageTag(longTag)
         
-        while (triesLeft >= 0) {
+        while (triesLeft >= 0 || maxRetries == -1) {
             if (waitForOpen) await this.waitForConnection()
 
             const promise = this.waitForMessage(tag, requiresPhoneConnection, timeoutMs)
